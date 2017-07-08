@@ -13,4 +13,5 @@ April 2015, 504 pp. ISBN-13: 978-1-59327-599-0
 [Python Cookbook Third Edition](http://www.onlineprogrammingbooks.com/python-cookbook-third-edition/)  
 Python Cookbook, 3rd edition, by David Beazley and Brian K. Jones (O’Reilly).  
 Copyright 2013 David Beazley and Brian Jones, 978-1-449-34037-7.  
-The online version can be [found here](http://chimera.labs.oreilly.com/books/1230000000393/index.html).
+The online version can be [found here](http://chimera.labs.oreilly.com/books/1230000000393/index.html).  
+Code samples can be [found on Github](https://github.com/dabeaz/python-cookbook)
