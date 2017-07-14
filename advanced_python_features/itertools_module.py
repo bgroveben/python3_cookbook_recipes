@@ -1,4 +1,5 @@
 # https://docs.python.org/3/library/itertools.html
+# https://docs.python.org/3/library/itertools.html#itertools-recipes
 
 # itertools is a module in the Python standard library that allows you to
 # create iterators for efficient looping.
