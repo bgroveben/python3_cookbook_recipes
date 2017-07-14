@@ -1,4 +1,6 @@
-# Itertools is a module in the Python standard library that allows you to
+# https://docs.python.org/3/library/itertools.html
+
+# itertools is a module in the Python standard library that allows you to
 # create iterators for efficient looping.
 # For example, permutations allows you to generate all of the possible ways of
 # ordering a set of objects:
