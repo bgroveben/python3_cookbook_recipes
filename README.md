@@ -16,4 +16,4 @@ Python Cookbook, 3rd edition, by David Beazley and Brian K. Jones (O’Reilly).
 Copyright 2013 David Beazley and Brian Jones, 978-1-449-34037-7.  
 The online version can be [found here](http://chimera.labs.oreilly.com/books/1230000000393/index.html).  
 Code samples can be [found on Github](https://github.com/dabeaz/python-cookbook).  
-[I am here](http://chimera.labs.oreilly.com/books/1230000000393/ch01.html#_keeping_the_last_n_items)
+[I am here](http://chimera.labs.oreilly.com/books/1230000000393/ch01.html#findingthelargestorsmallest)
