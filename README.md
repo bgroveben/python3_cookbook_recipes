@@ -16,4 +16,4 @@ Python Cookbook, 3rd edition, by David Beazley and Brian K. Jones (O’Reilly).
 Copyright 2013 David Beazley and Brian Jones, 978-1-449-34037-7.  
 The online version can be [found here](http://chimera.labs.oreilly.com/books/1230000000393/index.html).  
 Code samples can be [found on Github](https://github.com/dabeaz/python-cookbook).  
-[I am here](http://chimera.labs.oreilly.com/books/1230000000393/ch02.html#_matching_text_at_the_start_or_end_of_a_string)
+[I am here](http://chimera.labs.oreilly.com/books/1230000000393/ch02.html#_matching_strings_using_shell_wildcard_patterns)
