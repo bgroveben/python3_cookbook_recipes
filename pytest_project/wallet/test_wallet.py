@@ -21,7 +21,7 @@ def test_setting_initial_amount():
 def test_wallet_add_cash():
     wallet = Wallet(10)
     wallet.add_cash(90)
-    asset wallet.balance == 100
+    assert wallet.balance == 100
 
 def test_wallet_spend_cash():
     wallet = Wallet(20)
