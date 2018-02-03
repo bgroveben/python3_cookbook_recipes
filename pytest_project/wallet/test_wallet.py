@@ -22,12 +22,14 @@ def empty_wallet():
     """
     return Wallet()
 
+
 @pytest.fixture
 def wallet():
     """
     Returns a Wallet instance with a balance of 20.
     """
     return Wallet(20)
+
 
 def test_default_initial_amount(empty_wallet):
     assert empty_wallet.balance == 0
@@ -67,30 +69,18 @@ arguments corresponding to the names.
     (30, 10, 20),
     (20, 2, 18),
 ])
+def test_transactions(empty_wallet, earned, spent, expected):
+    empty_wallet.add_cash(earned)
+    empty_wallet.spend_cash(spent)
+    assert empty_wallet.balance == expected
 
-def test_transactions(earned, spent, expected):
-    my_wallet = Wallet()
-    my_wallet.add_cash(earned)
-    my_wallet.spend_cash(spent)
-    assert my_wallet.balance == expected
 
-# To make our tests less repetitive, we can go further and combine test
-# fixtures and parametrize test functions.
-# To demonstrate this, let's replace the wallet initialization code with a test # fixture as we did before.
-
-@pytest.fixture
-def my_wallet():
-    """
-    Returns a Wallet instance witha zero balance.
-    """
-    return Wallet()
-
-@pytest.mark.parametrize("earned,spent,expected", [
-    (30, 10, 20),
-    (20, 2, 18),
+@pytest.mark.parametrize("earned, spent", [
+    (30, 40),
+    (20, 100),
 ])
+def test_transactions_insufficient_amounts(empty_wallet, earned, spent):
+    empty_wallet.add_cash(earned)
 
-def test_transactions(my_wallet, earned, spent, expected):
-    my_wallet.add_cash(earned)
-    my_wallet.spend_cash(spent)
-    assert my_wallet.balance == expected
+    with pytest.raises(Exception):
+        empty_wallet.spend_cash(spent)
