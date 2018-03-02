@@ -11,9 +11,10 @@
 #***************************************************
 
 # Thank You Patrick!
+# https://pastebin.com/Gv6VxEZ7
 
-## I ran this on macOS High Sierra, and I can't get it to work.
-## Maybe I can upgrade the script?
+##* I ran this on macOS High Sierra, and I can't get it to work.
+##* Maybe I can upgrade the script?
 
 from subprocess import *
 import hashlib
