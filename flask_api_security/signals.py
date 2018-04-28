@@ -20,7 +20,7 @@ def get_token_from_request(request: Request):
     if matches is None:
         token = None
     else:
-        token = matches.groupdict({u'token': None}).get(u'token)
+        token = matches.groupdict({u'token': None}).get(u'token')
     return token
 
 
@@ -63,12 +63,12 @@ class EncryptionSignalHandler:
         self._keys = keys
 
     def request_started_handler(self, sender, **extra):
-        if request.content_type == u'application/jose:
+        if request.content_type == u'application/jose':
             jwe = JWE()
             decrypted = jwe.decrypt(request.body, self._keys)
 
     def request_finished_handler(self, sender, response, **extra):
-        if response.content_type == 'applicatin/json':
+        if response.content_type == 'application/json':
             jwe = JWE(str(response.data), alg='A256KW', enc='A256CBC-HS512', cty='application/json')
             encrypted = jwe.encrypt(self._keys, kid=self._keys[0].kid)
             response.content_type = 'application/jose'
