@@ -16,6 +16,6 @@ Python Cookbook, 3rd edition, by David Beazley and Brian K. Jones (O’Reilly).
 Copyright 2013 David Beazley and Brian Jones, 978-1-449-34037-7.  
 The online version can be [found here](http://chimera.labs.oreilly.com/books/1230000000393/index.html).  
 Code samples can be [found on Github](https://github.com/dabeaz/python-cookbook).  
-5.18 Wrapping an Existing File Descriptor as a File Object  
+5.19. Making Temporary Files and Directories  
 
 [Python Problems and Solutions](http://www.sanfoundry.com/python-problems-solutions/).
