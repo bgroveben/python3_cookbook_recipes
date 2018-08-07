@@ -4,18 +4,16 @@ from ast import Number, Sum, Sub, Print
 
 class Parser():
     def __init__(self):
-        # Create a list of token names used by the parser.
         self.pg = ParserGenerator(
+            # A list of all token names accepted by the parser.
             ['NUMBER', 'PRINT', 'OPEN_PAREN', 'CLOSE_PAREN',
-            'SEMI_COLON', 'SUM', 'SUB']
-            )
+             'SEMI_COLON', 'SUM', 'SUB']
+        )
 
-        def parse(self):
-            @self.pg.production(
-                'program : PRINT OPEN_PAREN expression CLOSE_PAREN SEMI_COLON'
-            )
-            def program(p):
-                return Print(p[2])
+    def parse(self):
+        @self.pg.production('program : PRINT OPEN_PAREN expression CLOSE_PAREN SEMI_COLON')
+        def program(p):
+            return Print(p[2])
 
         @self.pg.production('expression : expression SUM expression')
         @self.pg.production('expression : expression SUB expression')
@@ -25,7 +23,7 @@ class Parser():
             operator = p[1]
             if operator.gettokentype() == 'SUM':
                 return Sum(left, right)
-            elif operato.gettokentype() == 'SUB':
+            elif operator.gettokentype() == 'SUB':
                 return Sub(left, right)
 
         @self.pg.production('expression : NUMBER')

@@ -14,6 +14,11 @@ class BinaryOp():
 
 class Sum(BinaryOp):
     def eval(self):
+        return self.left.eval() + self.right.eval()
+
+
+class Sub(BinaryOp):
+    def eval(self):
         return self.left.eval() - self.right.eval()
 
 
