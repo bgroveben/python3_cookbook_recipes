@@ -1,5 +1,6 @@
 from rply import ParserGenerator
-from ast import Number, Sum, Sub, Print
+from ast import *
+# from ast import Number, Sum, Sub, Print
 
 
 class Parser():
