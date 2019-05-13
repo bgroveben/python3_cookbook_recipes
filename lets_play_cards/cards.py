@@ -82,3 +82,71 @@ class Card:
 
     def __ne__(self, other):
         return self.cmp_(other) != 0
+
+
+class Deck:
+    """
+    Each Deck object will contain a list of Card objects as an attribute.
+    """
+    def __init__(self):
+        """
+        Creates the cards attribute and generates a fifty-two card deck.
+        The deck is a list and each card object is a (suit, rank) tuple.
+        """
+        self.cards = []
+        for suit in range(4):
+            for rank in range(1, 14):
+                self.cards.append(Card(suit, rank))
+
+    def print_deck(self):
+        """
+        To print a Deck, we traverse the list and print each Card.
+        """
+        for card in self.cards:
+            print(card)
+
+    def __str__(self):
+        """
+        This is an alternative to the print_deck method above.
+        Returns a string representation of a Deck.
+        The cards are a single string printed in a cascade over 52 lines.
+        """
+        # s is an accumulator
+        s = ""
+        for i in range(len(self.cards)):
+            s = s + " " * i + str(self.cards[i]) + "\n"
+        return s
+
+    def shuffle(self):
+        """
+        Use the shuffle method from the random number generator.
+        """
+        import random
+        rng = random.Random()
+        rng.shuffle(self.cards)
+
+    def remove(self, card):
+        """
+        Takes a card as a parameter and removes it.
+        Returns True if the card was in the deck, False otherwise.
+        """
+        if card in self.cards:
+            # the remove method checks for deep equality
+            self.cards.remove(card)
+            return True
+        else:
+            return False
+
+    def pop(self):
+        """
+        The pop method is used to deal the cards.
+        The last card in the list is removed, like dealing from the bottom
+        of the deck.
+        """
+        return self.cards.pop()
+
+    def is_empty(self):
+        """
+        Returns True if the deck contains no cards.
+        """
+        return self.cards == []
