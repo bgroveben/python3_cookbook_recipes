@@ -125,6 +125,21 @@ class Deck:
         rng = random.Random()
         rng.shuffle(self.cards)
 
+    def deal(self, hands, num_cards=999):
+        """
+        The two parameters are a list (or tuple) of hands and the total number
+        of cards to deal.
+        The second parameter is optional.
+        If there aren't enogh cards, the method stops when all are dealt.
+        """
+        num_hands = len(hands)
+        for i in range(num_cards):
+            if self.is_empty():
+                break  # if there are no more cards
+            card = self.pop()  # take the next card
+            hand = hands[i % num_hands]  # decide whose turn it is
+            hand.add(card)  # add a card to that hand
+
     def remove(self, card):
         """
         Takes a card as a parameter and removes it.
@@ -150,3 +165,42 @@ class Deck:
         Returns True if the deck contains no cards.
         """
         return self.cards == []
+
+
+class Hand(Deck):
+    """
+    Hand is a subclass of Deck, so it will inherit those methods as well.
+    -->
+    >> from cards import Card, Deck, Hand
+    >> deck = Deck()
+    >> deck.shuffle()
+    >> hand = Hand("ben")
+    >> deck.deal([hand], 5)
+    >> print(hand)
+    4 of Diamonds
+     6 of Diamonds
+      4 of Spades
+       9 of Clubs
+        7 of Clubs
+    -->
+    """
+    def __init__(self, name =""):
+        self.cards = []
+        self.name = name
+
+    def add(self, card):
+        """
+        The remove() method is inherited from Deck.
+        """
+        self.cards.append(card)
+
+    def __str__(self):
+        """
+        Overrides the one in the Deck class so we can include more information.
+        """
+        s = "Hand " + self.name
+        if self.is_empty():
+            s += "is empty\n"
+        else:
+            s += " contains\n"
+        return s + Deck.__str__(self)
